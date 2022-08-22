@@ -9,12 +9,13 @@ var passport = require('passport');
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var request = require('request');
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 const User = require('./models/user');
 
 
 // EXPRESS
 var app = express();
-app.use(session({ secret: crypto.randomBytes(20).toString("hex"), resave: false, saveUninitialized: false }));
+app.use(session({ secret: crypto.randomBytes(20).toString("hex"), store: MongoStore.create({mongoUrl: process.env.MONGODB_URL}), resave: false, saveUninitialized: false }));
 app.use(express.static('public'));
 app.use(passport.initialize());
 app.use(passport.session());
