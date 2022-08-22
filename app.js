@@ -9,7 +9,7 @@ var passport = require('passport');
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var request = require('request');
 const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 const User = require('./models/user');
 
 
