@@ -79,6 +79,7 @@
 
 @media screen and (max-width: 1399px) {
   .grid-container {
+    grid-template-columns: repeat(6, 1fr)
     max-width: 100vw;
   }
 }
@@ -90,5 +91,9 @@
   
   .navigation {
     max-height: 7vh;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr)
   }
 }
