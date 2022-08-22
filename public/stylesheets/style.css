@@ -85,7 +85,9 @@
 }
 
 
-@media screen and (max-width: 360px) {
+@media screen 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 3) {
   .profile-picture {
     max-height: 7vh;
   }
