@@ -1,0 +1,46 @@
+extends layout 
+
+block content
+    -
+        let followedNum = [];
+        for (let i = 0; i < followed.length; i++) {
+            followedNum.push(i);
+        }
+
+    //- HEADER
+    div(class='container-fluid d-flex flex-row align-items-center justify-content-between text-light bg-gradient header-content')
+        div
+            span
+                a(class='text-decoration-none text-white text navigation' href='/') HOME
+        div
+            span(class='user-greeting') Hello, #{user.display_name}
+            img(src=user.profile_image_url class='profile-picture rounded-circle p-2')
+        
+
+    //- MAIN CONTENT
+    div(class='container-fluid min-vh-100 d-flex flex-row main-content')
+
+
+        //- FOLLOWED STREAMS
+        div(class='container-fluid d-none d-xxl-block bg-gradient followed-streams')
+            if followed.length > 0
+                each stream in followedNum
+                    a(class='text-white nav-link followed-link p-1' href=`https://www.twitch.tv/${followed[stream].user_login}` target='_blank' rel='noopener noreferrer')
+                        div(class='m-1 d-flex flex-row align-items-center justify-content-left')
+                            div(class='pe-3')
+                                img(class='profile-picture rounded-circle' src=profiles[stream].profile_image_url)
+                            div(class='pt-3')
+                                h5= followed[stream].user_name
+                                p(class='text-truncate')= followed[stream].game_name
+            else
+                h5(class='text-white') No Followed Streams Online!
+
+
+        //- DIRECTORY STREAMS
+        div(class='container-fluid grid-container ml-auto mr-auto mt-4' style=`grid-template-columns: repeat(6, 1fr)`)
+            each stream in directory
+                - let thumbnail = stream.thumbnail_url.replace(/{width}x{height}/g, '224x151');
+                div(class='col-sm m-1 d-flex justify-content-center')
+                    a(class='text-decoration-none' href=`https://www.twitch.tv/${stream.user_login}` target='_blank' rel='noopener noreferrer')
+                        img(src=thumbnail class='rounded shadow mb-2')
+                        p(class='stream-label text-white text-truncate text-decoration-none')= stream.user_name
