@@ -49,7 +49,7 @@
   transition: box-shadow .5s;
 }
 
-.game-image:hover {
+.grid-image:hover {
   box-shadow: 5px 5px 10px #000000;
 }
 
