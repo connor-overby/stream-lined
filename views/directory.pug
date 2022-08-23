@@ -23,7 +23,7 @@ block content
 
 
         //- FOLLOWED STREAMS
-        div(class='container-fluid d-none d-xxl-block bg-gradient followed-streams sticky-top')
+        div(class='container-fluid d-none d-xxl-block bg-gradient sticky-bottom followed-streams')
             if followed.length > 0
                 each stream in followedNum
                     a(class='text-white nav-link followed-link p-1' href=`https://www.twitch.tv/${followed[stream].user_login}` target='_blank' rel='noopener noreferrer')
