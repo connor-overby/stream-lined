@@ -30,6 +30,7 @@
 .grid-container {
   display: grid;
   max-width: 80vw;
+  overflow: scroll;
 }
 
 .game-label {
