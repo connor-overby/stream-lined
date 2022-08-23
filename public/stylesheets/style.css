@@ -44,7 +44,7 @@
   width: 224px;
 }
 
-.game-image {
+.grid-image {
   box-shadow: 1px 1px 5px #000000;
   transition: box-shadow .5s;
 }

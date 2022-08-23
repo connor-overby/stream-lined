@@ -44,5 +44,5 @@ block content
         - let boxArt = game.box_art_url.replace(/{width}x{height}/g, '151x224');
         div(class='col-sm m-1 d-flex justify-content-center')
           a(class='text-decoration-none' href=`/game/${game.id}`)
-            img(src=boxArt class='rounded mb-2 game-image')
+            img(src=boxArt class='rounded mb-2 grid-image')
             p(class='game-label text-white text-truncate')= game.name

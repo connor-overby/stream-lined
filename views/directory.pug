@@ -43,5 +43,5 @@ block content
                 - let thumbnail = stream.thumbnail_url.replace(/{width}x{height}/g, '224x151');
                 div(class='col-sm m-1 d-flex justify-content-center')
                     a(class='text-decoration-none' href=`https://www.twitch.tv/${stream.user_login}` target='_blank' rel='noopener noreferrer')
-                        img(src=thumbnail class='rounded shadow mb-2')
+                        img(src=thumbnail class='rounded shadow mb-2 grid-image')
                         p(class='stream-label text-white text-truncate text-decoration-none')= stream.user_name
