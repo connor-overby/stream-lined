@@ -8,7 +8,7 @@ block content
         }
 
     //- HEADER
-    div(class='container-fluid d-flex flex-row align-items-center justify-content-between text-light bg-gradient header-content')
+    div(class='container-fluid d-flex flex-row align-items-center justify-content-between text-light bg-gradient sticky-top header-content')
         div
             span
                 i(class="bi bi-house-fill pe-1 pb-1")
@@ -23,7 +23,7 @@ block content
 
 
         //- FOLLOWED STREAMS
-        div(class='container-fluid d-none d-xxl-block bg-gradient followed-streams')
+        div(class='container-fluid d-none d-xxl-block bg-gradient followed-streams sticky-top')
             if followed.length > 0
                 each stream in followedNum
                     a(class='text-white nav-link followed-link p-1' href=`https://www.twitch.tv/${followed[stream].user_login}` target='_blank' rel='noopener noreferrer')
