@@ -4,6 +4,7 @@
 .header-content {
   border-bottom: solid 1px #333333;
   background-color: #31393C;
+  max-height: 7vh;
   overflow: hidden;
 }
 
@@ -25,14 +26,14 @@
 .main-content {
   padding: 0;
   margin: 0;
-  max-height: 100vh;
+  max-height: 93vh;
   background-color: #938274;
 }
 
 .grid-container {
   display: grid;
   max-width: 80vw;
-  max-height: 100vh;
+  max-height: 93vh;
   overflow: auto;
 }
 
@@ -63,7 +64,7 @@
   padding: 0;
   margin: 0;
   max-width: 15vw;
-  max-height: 100vh;
+  max-height: 93vh;
   background-color: #423E3B;
   overflow: auto;
 }
