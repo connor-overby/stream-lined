@@ -1,13 +1,10 @@
-html, body {
-  overflow: hidden;
-}
-
 /* HEADER CONTENT */
 
 
 .header-content {
   border-bottom: solid 1px #333333;
   background-color: #31393C;
+  overflow: hidden;
 }
 
 .navigation {
@@ -34,7 +31,7 @@ html, body {
 .grid-container {
   display: grid;
   max-width: 80vw;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .game-label {
@@ -65,7 +62,7 @@ html, body {
   margin: 0;
   max-width: 15vw;
   background-color: #423E3B;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .followed-link {
