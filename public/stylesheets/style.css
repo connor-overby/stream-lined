@@ -25,6 +25,7 @@
 .main-content {
   padding: 0;
   margin: 0;
+  max-height: 100vh;
   background-color: #938274;
 }
 
@@ -62,6 +63,7 @@
   padding: 0;
   margin: 0;
   max-width: 15vw;
+  max-height: 100vh;
   background-color: #423E3B;
   overflow: auto;
 }
