@@ -82,34 +82,3 @@ html {
 .followed-link:hover {
   background-color: #423E3B;
 }
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1399px) {
-  .grid-container {
-    grid-template-columns: repeat(6, 1fr);
-    max-width: 100vw;
-  }
-}
-
-
-@media screen 
-and (max-width: 360px) 
-and (-webkit-min-device-pixel-ratio: 3) {
-  .profile-picture {
-    max-height: 7vh;
-  }
-  
-  .navigation {
-    max-height: 7vh;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr)
-  }
-}
