@@ -28,6 +28,7 @@
   margin: 0;
   max-height: 90vh;
   background-color: #938274;
+  overflow: hidden;
 }
 
 .grid-container {
