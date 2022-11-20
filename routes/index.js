@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
 const { getFollowed, getGames, getProfiles, getRefresh } = require('../public/javascripts/requests');
 
 /* GET HOME */
@@ -51,13 +50,5 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res, next) => {
     res.render('login', { title: 'Log In' });
 });
-
-exports.user_create_post = (req, res) => {
-    res.send('NOT IMPLEMENTED: User Create POST');
-}
-
-exports.user_update_post = (req, res) => {
-    res.send('NOT IMPLEMENTED: User Update POST');
-}
 
 module.exports = router;

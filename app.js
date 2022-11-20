@@ -8,14 +8,12 @@ var crypto = require('crypto');
 var passport = require('passport');
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var request = require('request');
-const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo');
 const User = require('./models/user');
 
 
 // EXPRESS
 var app = express();
-app.use(session({ secret: crypto.randomBytes(20).toString("hex"), store: MongoStore.create({mongoUrl: process.env.MONGODB_URL}), resave: false, saveUninitialized: false }));
+app.use(session({ secret: crypto.randomBytes(20).toString("hex"), resave: false, saveUninitialized: false }));
 app.use(express.static('public'));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -26,12 +24,6 @@ app.use('/game', gameRouter);
 // VIEWS
 app.set('views', 'views');
 app.set('view engine', 'pug');
-
-// MONGOOSE
-const mongoDB = process.env.MONGODB_URL;
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB Connection Error: '));
 
 
 // OAUTH2 USER PROTOTYPE
@@ -77,17 +69,6 @@ passport.use('twitch', new OAuth2Strategy({
   async (accessToken, refreshToken, profile, done) => {
     profile.accessToken = accessToken;
     profile.refreshToken = refreshToken;
-    process.env.ACCESS_TOKEN = accessToken;
-    process.env.REFRESH_TOKEN = refreshToken;
-    const user = await User.findOneAndUpdate({ id: profile.data[0].id }, {
-      id: profile.data[0].id,
-      name: profile.data[0].display_name,
-      pfp: profile.data[0].profile_image_url,
-      type: profile.data[0].broadcaster_type
-    }, {
-      new: true,
-      upsert: true
-    });
     done(null, profile);
   }
 ));
